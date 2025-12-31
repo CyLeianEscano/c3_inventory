@@ -1,0 +1,396 @@
+@font-face {
+    font-family: "MyBarcodeFont";
+    src: url("../wwwroot/fonts/code128.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: "Arial Rounded MT", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #606060;
+}
+
+
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 25%;
+    max-width: 25%;
+    min-width: 220px;
+    background-color: #ffffff;
+    color: #111827;
+    padding: 20px 16px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.sidebar-title-main {
+    color: #013cff;
+}
+
+.sidebar-title-sub {
+    font-size: calc(1.3rem - 7px);
+}
+
+.sidebar-header hr {
+    border: none;
+    border-top: 1px solid #d9dde7;
+    margin: 20px 0;
+}
+
+.sidebar-user {
+    font-size: 0.9rem;
+    margin-top: auto;
+    padding-top: 23px;
+    border-top: 1px solid #d9dde7;
+}
+
+.sidebar-username {
+    font-weight: bold;
+}
+
+.sidebar-logout a {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #b91c1c;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: 15px;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.sidebar-logout a:hover {
+    background-color: #991b1b;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.sidebar-nav a {
+    display: block;
+    background-color: transparent;
+    color: #606060;
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background-color: #c7d3fa;
+}
+
+.sidebar-nav a.active {
+    color: #013cff;
+}
+
+.main-content {
+    width: 75%;
+    flex: 1 1 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #d9dde7;
+}
+
+.main-content.full-width {
+    width: 100%;
+}
+
+table th,
+table td {
+    text-align: left;
+}
+
+.login-page {
+    min-height: calc(100vh - 32px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 25vh;
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding: 24px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.login-card .error-message {
+    color: #d32f2f;
+    margin-bottom: 12px;
+}
+
+.login-field {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-label {
+    min-width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"] {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.cashier-search input[type="text"],
+.cashier-search input[type="search"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.cashier-search-actions {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.cashier-search-actions button[type="submit"] {
+    padding: 8px 24px;
+    font-size: 0.95rem;
+}
+
+.login-card button[type="submit"] {
+    width: 100%;
+    padding: 14px 0;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+ 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Arial Rounded MT Bold", "Arial Rounded MT", Arial, sans-serif;
+}
+
+ 
+
+a,
+button,
+input[type="submit"],
+input[type="button"] {
+    font-family: "Arial Rounded MT", Arial, sans-serif;
+}
+
+nav a {
+    display: inline-block;
+    background-color: #2a65db;
+    color: #ffffff;
+    padding: 6px 10px;
+    margin-right: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+main a,
+button,
+input[type="submit"],
+input[type="button"] {
+    background-color: #2a65db;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+main a {
+    display: inline-block;
+}
+
+
+nav a:hover,
+main a:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #234fae; 
+}
+
+main a[href*="action=delete"],
+main a[href*="action=cancel"],
+button[name="delete"],
+button[name="cancel"],
+input[type="submit"][value*="Delete"],
+input[type="submit"][value*="Cancel"] {
+    background-color: #b91c1c;
+}
+
+main a[href*="action=restock"],
+button[name="restock"],
+input[type="submit"][value*="Restock"] {
+    background-color: #15803d;
+}
+
+main a[href*="action=restock"]:hover,
+button[name="restock"]:hover,
+input[type="submit"][value*="Restock"]:hover {
+    background-color: #166534;
+}
+
+main a[href*="action=delete"]:hover,
+main a[href*="action=cancel"]:hover,
+button[name="delete"]:hover,
+button[name="cancel"]:hover,
+input[type="submit"][value*="Delete"]:hover,
+input[type="submit"][value*="Cancel"]:hover {
+    background-color: #991b1b;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-family: "Arial Rounded MT", Arial, sans-serif;
+}
+
+.barcode-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.barcode-bars {
+    font-family: "MyBarcodeFont", "Consolas", "Courier New", monospace;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.barcode-human {
+    font-family: "Arial Rounded MT", Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: #606060;
+}
+
+
+table th,
+table td {
+    text-align: left;
+}
+
+table th,
+table td {
+    text-align: left;
+}
+
+#dashboard-chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chart-block {
+    flex: 1 1 0;
+    min-width: 280px;
+}
+
+#inventory-pie-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+#inventoryPieChart {
+    max-width: 320px;
+    max-height: 320px;
+}
+
+#monthly-sales-wrapper {
+    display: flex;
+    align-items: stretch;
+    margin-top: 10px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    height: 320px;
+}
+
+#monthlySalesChart {
+    width: 100%;
+}
+
+#inventory-pie-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.pie-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pie-legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid #d1d5db;
+}
+
+.pie-legend-label {
+    flex: 1;
+}
+
+.pie-legend-value {
+    font-weight: bold;
+}
