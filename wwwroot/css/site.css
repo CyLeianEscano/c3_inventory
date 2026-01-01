@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MyBarcodeFont";
-    src: url("../wwwroot/fonts/code128.ttf") format("truetype");
+    src: url("../fonts/code128.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -140,6 +140,146 @@ table td {
     max-width: 420px;
     width: 100%;
     text-align: center;
+}
+
+.login-card h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.form-page {
+    min-height: calc(100vh - 32px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 24px 32px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card input[type="password"],
+.form-card input[type="email"],
+.form-card select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.form-card button[type="submit"],
+.form-card input[type="submit"] {
+    margin-top: 8px;
+}
+
+.form-page {
+    min-height: calc(100vh - 32px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 24px 32px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card input[type="password"],
+.form-card input[type="email"],
+.form-card select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.form-card button[type="submit"],
+.form-card input[type="submit"] {
+    margin-top: 8px;
+}
+/* Generic page + card layout for forms (add/edit product, register, etc.) */
+.form-page {
+    min-height: calc(100vh - 32px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 24px 32px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card input[type="password"],
+.form-card select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    margin-bottom: 10px;
 }
 
 .login-card h2 {
@@ -304,7 +444,7 @@ th, td {
 
 .barcode-bars {
     font-family: "MyBarcodeFont", "Consolas", "Courier New", monospace;
-    font-size: 2rem;
+    font-size: 2.4rem; /* 20% larger than before */
     line-height: 1.1;
 }
 

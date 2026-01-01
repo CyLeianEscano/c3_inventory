@@ -14,7 +14,14 @@ function is_active(string $controller): string {
     $curController = $_GET['controller'] ?? 'dashboard';
     return $curController === $controller ? 'active' : '';
 }
+
+function is_active_action(string $controller, string $action): string {
+    $curController = $_GET['controller'] ?? 'dashboard';
+    $curAction     = $_GET['action'] ?? 'index';
+    return ($curController === $controller && $curAction === $action) ? 'active' : '';
+}
 ?>
+
 <div class="app-layout">
     <?php if (isset($_SESSION['user'])): ?>
         <aside class="sidebar">
@@ -38,12 +45,12 @@ function is_active(string $controller): string {
                        href="<?= BASE_URL ?>/?controller=cashier&action=cart">Cashier</a>
                 <?php endif; ?>
 
-                <?php if (in_array($_SESSION['user']['role'], ['Staff', 'Admin'])): ?>
-                    <a class="<?= is_active('staff') ?>"
-                       href="<?= BASE_URL ?>/?controller=staff&action=inventory">Inventory</a>
-                    <a class="<?= is_active('staff') ?>"
-                       href="<?= BASE_URL ?>/?controller=staff&action=transactions">Transactions</a>
-                <?php endif; ?>
+<?php if (in_array($_SESSION['user']['role'], ['Staff', 'Admin'])): ?>
+    <a class="<?= is_active_action('staff', 'inventory') ?>"
+       href="<?= BASE_URL ?>/?controller=staff&action=inventory">Inventory</a>
+    <a class="<?= is_active_action('staff', 'transactions') ?>"
+       href="<?= BASE_URL ?>/?controller=staff&action=transactions">Transactions</a>
+<?php endif; ?>
 
                <?php if ($_SESSION['user']['role'] === 'Admin'): ?>
                     <a class="<?= is_active('user') ?>"

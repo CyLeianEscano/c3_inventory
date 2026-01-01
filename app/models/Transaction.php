@@ -43,8 +43,7 @@ class Transaction
             SELECT
                 DATE_FORMAT(transaction_date, '%Y-%m') AS ym,
                 SUM(quantity) AS total_qty
-            FROM transaction
-            WHERE transaction_type = 'Sales'
+            FROM transaction            WHERE transaction_type IN ('Sales', 'Sale')
               AND YEAR(transaction_date) = ?
             GROUP BY ym
             ORDER BY ym
